@@ -1,39 +1,44 @@
 import React from 'react';
+import './App.css';
 
 function App() {
-  return (
-    <div>
-      <header>
-        <h1>My Portfolio</h1>
-      </header>
-      <main>
-        <section>
-          <h2>About Me</h2>
-          <p>...</p>
-        </section>
-        <section>
-          <h2>Projects</h2>
-          <ul>
-            <li>
-              <h3>Project 1</h3>
-              <p>...</p>
-            </li>
-            <li>
-              <h3>Project 2</h3>
-              <p>...</p>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <h2>Contact</h2>
-          <p>...</p>
-        </section>
-      </main>
-      <footer>
-        <p>© 2022 My Portfolio</p>
-      </footer>
-    </div>
-  );
+    return (
+        <div className="App">
+            <header className="header">
+                <h1>Welcome to My Portfolio</h1>
+                <p>A showcase of my work</p>
+            </header>
+            <main className="content">
+                <div className="project">
+                    <h2>Project 1</h2>
+                    <p>Description of Project 1</p>
+                </div>
+                <div className="project">
+                    <h2>Project 2</h2>
+                    <p>Description of Project 2</p>
+                </div>
+                {/* Add more projects as needed */}
+            </main>
+            <div className="contact-form">
+              <h2>Contact Me</h2>
+              <form action="http://localhost:5000/contact" method="post">
+                <label>
+                  Name:
+                  <input type="text" name="name" required />
+                </label>
+                <label>
+                  Email:
+                  <input type="email" name="email" required />
+                </label>
+                <label>
+                  Message:
+                  <textarea name="message" required></textarea>
+                </label>
+                <input type="submit" value="Submit" />
+              </form>
+            </div>
+        </div>
+    );
 }
 
 export default App;
